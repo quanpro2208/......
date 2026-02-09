@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ứng dụng phát nhạc</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="player">
+      <header class="player__header">
+        <div>
+          <p class="player__eyebrow">Trình phát nhạc</p>
+          <h1>Giai điệu mỗi ngày</h1>
+        </div>
+        <div class="player__mode" id="mode">Danh sách phát</div>
+      </header>
+
+      <section class="now-playing">
+        <img
+          id="cover"
+          class="now-playing__cover"
+          src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80"
+          alt="Bìa album"
+        />
+        <div class="now-playing__info">
+          <h2 id="track-title">SoundHelix Song 1</h2>
+          <p id="track-artist">SoundHelix</p>
+        </div>
+      </section>
+
+      <section class="controls">
+        <div class="timeline">
+          <span id="current-time">0:00</span>
+          <input
+            id="progress"
+            class="timeline__slider"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+          />
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls__buttons">
+          <button id="prev" class="btn" aria-label="Bài trước">⏮</button>
+          <button id="play" class="btn btn--primary" aria-label="Phát hoặc tạm dừng">▶</button>
+          <button id="next" class="btn" aria-label="Bài tiếp theo">⏭</button>
+        </div>
+
+        <div class="controls__options">
+          <label class="toggle">
+            <input id="loop" type="checkbox" />
+            <span>Lặp lại</span>
+          </label>
+          <label class="volume">
+            <span>Âm lượng</span>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" />
+          </label>
+        </div>
+      </section>
+
+      <section class="playlist">
+        <h3>Danh sách phát</h3>
+        <ul id="playlist"></ul>
+      </section>
+    </main>
+
+    <audio id="audio" preload="metadata"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
